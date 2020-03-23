@@ -17,6 +17,7 @@ def index(request):
             return redirect(reverse('index'))
 
     messages = Message.objects.all()
+    print(messages)
     context = {
         'message_list': messages,
         'form': message_form

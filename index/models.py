@@ -13,6 +13,7 @@ class CommonInfo(models.Model):
 class Message(CommonInfo):
     username = models.CharField(max_length=64)
     content = models.TextField(max_length=65535)
+    create_time = models.DateTimeField(auto_created=True, null=True, blank=True)
 
     def __str__(self):
         return f'{self.username}: {self.content}'
