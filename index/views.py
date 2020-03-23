@@ -5,6 +5,17 @@ from .forms import MessageForm
 from django.template import loader
 from django.contrib import messages as django_messages
 
+from aliyunsdkcore import client
+from aliyunsdkcore.profile import region_provider
+from aliyunsdkgreen.request.v20180509 import TextScanRequest
+from aliyunsdkgreen.request.extension import HttpContentHelper
+import json
+import uuid
+import datetime
+import logging
+
+logger = logging.getLogger(__name__)
+
 
 # Create your views here.
 def index(request):
@@ -17,7 +28,6 @@ def index(request):
             return redirect(reverse('index'))
 
     messages = Message.objects.all()
-    print(messages)
     context = {
         'message_list': messages,
         'form': message_form
