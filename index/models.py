@@ -17,3 +17,4 @@ class Message(CommonInfo):
 
     def __str__(self):
         return f'{self.username}: {self.content} at{self.create_time}'
+
