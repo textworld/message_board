@@ -10,6 +10,7 @@ class CommonInfo(models.Model):
         abstract = True
 
 
+#消息模型
 class Message(CommonInfo):
     username = models.CharField(max_length=64)
     content = models.TextField(max_length=65535)

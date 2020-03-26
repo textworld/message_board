@@ -10,6 +10,11 @@ import logging
 logger = logging.getLogger(__name__)
 
 
+# home
+def home(request):
+    return redirect(reverse('index'))
+
+
 # Create your views here.
 def index(request):
     message_form = MessageForm()
