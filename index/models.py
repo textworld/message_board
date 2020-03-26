@@ -10,6 +10,7 @@ class CommonInfo(models.Model):
         abstract = True
 
 
+#消息模型
 class Message(CommonInfo):
     username = models.CharField(max_length=64)
     content = models.TextField(max_length=65535)
@@ -17,3 +18,4 @@ class Message(CommonInfo):
 
     def __str__(self):
         return f'{self.username}: {self.content} at{self.create_time}'
+
